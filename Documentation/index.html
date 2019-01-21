@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Rapide - Landing Page Coming Soon Template Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Rapide - Landing page Coming Soon template&rdquo; Documentation by &ldquo;MiVFX&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Rapide - Coming Soon template&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-8 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 29/10/2014<br>
+					By: MiVFX / HighHay<br>
+					Email: <a href="mailto:miradontsoa@yahoo.fr">miradontsoa@yahoo.fr</a><br>
+                        Twitter: <a href="http://twitter.com/miradontsoa">twitter.com/miradontsoa</a><br>
+                        Themeforest: <a href="http://themeforest.net/user/mivfx">themeforest.net/user/mivfx</a>
+                        <br>
+                        Website: <a href="http://highhay.com">highhay.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-8 -->		
+	
+			<div class="span-10 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/mivfx">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Theme Customization</a></li>
+			<li><a href="#javascript">JavaScript and  Countdown Clock</a></li>
+            <li><a href="#php">PHP AJAX Email/Message Server Code Explanation</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+			
+		</ol>
+		
+		<hr>
+        <img src='assets/images/screenshot.jpg' alt='Screenshot'>
+		
+		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>This theme is a landing page template with a responsive layout. All of the information within the main content area is nested within a main tag with an id of "mainpage". 
+        </p>
+        <p>The general structure of each page subsection is the same throughout the template. Here is the general structure.</p>
+		
+		<img src="assets/images/mainsection.png" alt="Page Section Structure" />
+        <h4><strong>Background Cover</strong></h4>
+        <p>The page cover (background , background video and background-mask) content is within a div with a class "page-cover".
+        </p>
+        <img src="assets/images/pagecover.png" alt="Page Cover Section" />
+        <h4><strong>Background Video</strong></h4>
+        <p>
+            If you would like to enable background video, add the following lines inside the div with a class "page-cover", and below the div with class "cover-bg-mask" (The layout "index_layout_videostatic" already uses this feature) :</p>
+        <pre>
+&lt;div id="container" class="video-container show-for-medium-up"&gt;
+    &lt;video autoplay="autoplay" loop="loop" autobuffer="autobuffer" muted="muted"
+           width="640" height="360"&gt;
+        &lt;source src="vid/flower_loop.mp4" type="video/mp4"&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+        </pre>
+        <p>Video should be in webm format (type="video/webm) or mp4 format (type="video/mp4) according to HTML5 rules.</p>
+        <h4><strong>Social Networks Links</strong></h4>
+        <p>To change the social networks link, find the div with a class "socialnet" and change the href to your social network links. If you would like to add more social networks links, add the following line inside this div : </p>
+        <pre>
+&lt;a href='#'&gt;&lt;i class="ion ion-social-socialnetworkname"&gt;&lt;/i&gt;&lt;/a&gt;
+        </pre>
+        <p>This template uses <a href='http://ionicons.com/'>Ion Icons</a> Webfont for all of its icons to be Responsive. Check out their <a href='http://ionicons.com/'>Website</a> for more documentation.</p>
+
+		<hr>
+
+		<h3 id="cssFiles"><strong>B) CSS Files and Theme Customization</strong> - <a href="#toc">top</a></h3>
+
+		<p>The two main CSS files in which this theme is build upon are : "main.css" and "main_responsive.css". The first one contains all of the specific stylings for the page (block structure, fonts, colors, positions, initializations). This file is separated into sections using:</p>
+<pre>
+    /* 0. Base Style */
+    some code
+    /* 1. Menu at top layer */
+    some code
+    etc.
+</pre>
+         <p>The second file (main_responsive.css) handles the responsiveness of the layout accross different sreens size. You can copy all of its content to the main file (main.css) to increase page loading performance.</p>
+        <h4><strong>Theme Customization</strong></h4>
+        <p>A Third file "main_alt_style.css" is used for an easy customization of the theme. There are 4 predefined style in this template. To apply one of them, first, add a class 'styleX' to the body tag such as (for style2) :
+<pre>
+    &lt;body class="style2" ...&gt;
+</pre>   
+    </p>
+       <p>Then you can edit the main_alt_style.css to change colors :</p>
+
+<pre>	
+    /* First color */
+    .style2 .mm a,       
+    .style2 .page-top .p-soon>div h2,       
+    .style2 .page-top .p-nav>div h2,       
+    .style2 .page-top .p-nav>div h3,       
+    .style2 .page-cent .p-title h3,       
+    .style2 .page-when .clock .digit,       
+    .style2 .page .form input,       
+    .style2 .page .form button,       
+    .style2 .page .form textarea,       
+    .style2 .page p,       
+    .style2 .page-contact .onecolumn-1 .page-grid .desc,       
+    .style2 .page-contact .socialnet a,       
+    .style2 .page-contact ul.desc ,       
+    .style2 .text-maincolor{       
+        color: #FFF; //Change color
+    }
+    .style2 #fp-nav span, .fp-slidesNav span{
+        border-color: #fff; //Change color
+    }
+    etc.
+</pre>
+<p>To change background image, point the "background" value to your image location</p>
+<pre>
+    .style2 .page-cover .cover-bg{
+        background: url('IMAGE LOCATION HERE');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+</pre>
+<p> You can also change the bacground cover mask color:
+</p>
+<pre>
+    .style2  .page-cover .cover-bg-mask{
+        background: rgba(51, 29, 47, 0.4);
+    }
+</pre>
+    <p>You are not limited to the 4 predefined styles. Feel free to add your owns. <br>You can even override an existing style by adding another class to the body tag and customizing the CSS of this class.
+</p>
+    <p>Also, you can copy all of its content to the main CSS file (main.css) to increase page loading performance.</p>
+    <h4><strong>Other CSS files</strong></h4>
+    <p>Other vendors CSS files are used for browser normalization (normalize.css), webfont loading (ionicons.min.css, /fonts/opensans/stylesheet.css), grid framework (foundation.min.css, /js/vendor/jquery.fullPage.css ) and page loading (pageloader.css).
+        <br>Please <strong>do not edit</strong> these files. Just override their rules (in "main.css" for example) for theme customization.</p>
+		<hr>
+		
+		<h3 id="javascript"><strong>C) JavaScript and Countdown Clock</strong> - <a href="#toc">top</a></h3>
+		<h4><strong>Javascript</strong></h4>
+        <p>Javascript makes this theme more dynamic and animated, even thought some animations use CSS3.</p>
+		<p>This theme imports these great vendor specific Javascript Plugin (Thanx to their authors) :</p>
+		
+		<ul>
+			<li>jQuery : a Javascript library that greatly reduces the amount of code that you must write.</li>
+			<li>jQuery FullPage Plugin : an awesome plugin to make page slider</li>
+			<li>jQuery UI Plugin : required by FullPage plugin</li>
+			<li>jQuery Down Count plugin : handle countdown clock</li>
+			<li>okVideo plugin : for background video</li>
+			<li>jQuery MaxImage plugin : to maximize background video</li>
+		</ul>
+        <p>Also, based on these plugins, it uses the following javascripts main files :</p>
+		
+		<ul>
+			<li>form_script.js : to handle Ajax Contact Form</li>
+			<li>main.js : contains the general scriptd of the theme (plugin initialization, smooth scroll, page loader)</li>
+        </ul>
+        <p>Their are ready to use and i do not suggest to modify them but you can always tweak them.
+        </p>
+        <h4><strong>Countdown clock</strong></h4>
+        <p> To edit the launching date of the countdown clock, find the div with a class "site-config" and change the "data-date" for launching date (Format: MM/DD/YYYY HH:MN:SC) and "data-date-timezone" for time zone. Example :
+        </p>
+    <pre>
+    &lt;div class='site-config'
+        data-date='01/31/2015 23:00:00' 
+        data-date-timezone='+0'
+    &gt;&lt;/div&gt;
+    </pre>
+        <p>You can also change the texts of the count down clock (change, "days" to "jours" for example). To do so, find the div which contains the when page (the div with a ""page-when" class), within it, go to clock-countdown and edit divs with "text" class</p>
+		<pre>
+    &lt;!-- Begin of when page --&gt;
+    &lt;div class='section page page-cent page-when' id='s-when'&gt;
+        &lt;section class='content'&gt;
+            ...
+            &lt;div class='clock clock-countdown'&gt;
+                &lt;div class='block'&gt;
+                    &lt;div class='digit days'&gt;00&lt;/div&gt;
+                    <strong>&lt;div class='text'&gt;jours&lt;/div&gt;</strong>
+                &lt;/div&gt;
+            etc.
+        </pre>
+		<hr>
+		
+		<h3 id="php"><strong>D) PHP AJAX Email/Message Server Code Explanation</strong> - <a href="#toc">top</a></h3>
+		<p>The AJAX Email/Message form is divided in two parts: the client side (handled by the browser) and the server side </p>
+    <h4><strong>Client side</strong></h4>
+    <p>The HTML file and the JavaScript file "form_script.js" handle the client side.</p>
+    <p>
+    The email registration part in the html file is within the form tag with a class "send_email_form". You can edit its "action" attribute to point to your ajax server (such as 'ajaxserver/serverfile.php').  
+        <br>
+        You can change the text which appears when the email is sent by changing the p element with a class "email-ok" within this form tag.
+    </p>
+    <img src="assets/images/email_form_html.png" alt="Message Form HTML" />
+    <pre>
+    &lt;p class='email-ok invisible'>...Thank you...&lt;/p&gt;
+    </pre>
+    <p>
+    And the contact form part in the html file is within the form tag with a class "send_message_form". You can edit its "action" attribute to point to your ajax server (such as 'ajaxserver/serverfile.php').<br>
+        You can change the text which appears when the message is sent by changing the p element with a class "message-ok" within this form tag.
+    </p>
+    <img src="assets/images/message_form_html.png" alt="Message Form HTML" />
+    <pre>
+    &lt;p class='message-ok invisible'>Your message ...&lt;/p&gt;
+    </pre>
+    <p>
+    The JavaScript file "form_script.js" manages the sending of the data to the server and notify the user when it is done. There is no need to change its content.
+    </p>
+    
+    <h4><strong>Server side</strong></h4>
+    <p>
+    You have to point you registration form and contact form in to an AJAX server as precised in the "Client side" section above. 
+        <br>The AJAX server used by this theme is PHP based. Three samples php-based AJAX server is provided under ajaxserver folder :
+        </p>
+        <ol>
+            <li>serverfile.php : Writes emails and messages in files called "email.txt" and "message.txt" respectively. You do not need to edit this file.</li>
+            
+            <li>server.php : Sends email and messages to your desired email addresses. Edit this file and replace all the <code>$recipient = "your@email.com";</code> by yours <b>(there are two of it since message recipient and email subscription recipient could be different)</b>. You can also change the message content and subject by changing the <code>$subject</code> and  <code>$email_content</code> variable.
+                <br>
+                <strong>IMPORTANT :</strong> Most of Web Hosting provider allow you to use only your domain based email (such as contact@yourdomain.com) for this feature.</li>
+            
+            <li>servermailchimp.php : Uses mailchimp API to add user email to a mailchimp registration list.
+            <br>
+            <strong>IMPORTANT :</strong> You need a mailchimp API Key and a mailchimp List to make it working
+                <ul>
+                    <li>First, create a <a href='http://mailchimp.com/'>Mailchimp</a> account if you do not have one.</li>
+                    <li>Then create an API key here <a href='http://admin.mailchimp.com/account/api/' title='Mailchimp API Key'>http://admin.mailchimp.com/account/api/</a></li>
+                    <li>Create also a Mailchimp mailing list here <a href='http://admin.mailchimp.com/lists/'>http://admin.mailchimp.com/lists/</a> , select the new list and click the "settings" menu - the Unique Id is at the bottom of that page.</li>
+                    <li>
+                        Now, edit the "servermailchimp.php" file and change <code>$api = new MCAPI('YOUR_APIKEY_HERE')</code> to match to your api key. Change also <code>$list_id = "YOUR_LISTID_HERE"</code> to your mailchimp list Unique Id.
+                    </li>
+                    <li>Do not forget to change the action attribute of the email registration form within the HTML file to point to the mailchimp server :
+<pre>
+    &lt;form ... action="/ajaxserver/servermailchimp.php"&gt;
+        ...
+    &lt;/form&gt;
+</pre>
+                    </li>
+                </ul>
+            </li>
+            
+         </ol>
+    <p>These server handles messages and email subscription requests made by users.
+    </p>
+		
+		<hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li>Icons webfont by <a href='http://ionicons.com/'>Ionicons</a> </li>
+            <li>Sample background pictures, available for free to use on <a href='http://unsplash.com/'>unsplash.com</a></li>
+			<li>JavaScripts and jQuery plugins</li>
+			<li>Grey Flourish background loop HD video on Youtube for demo purpose</li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Miradontsoa Andria. / MiVFX / HighHay Team</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
