@@ -28,7 +28,7 @@ $(document).ready(function() {
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
         lazyLoad: true,
-        //scrollOverflow: true
+        scrollOverflow: true
         //controlArrows: false,
       
     });
